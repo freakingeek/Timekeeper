@@ -1,59 +1,56 @@
-# CalendarApp
+# Timekeeper
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+Timekeeper is an Angular application built to track and manage time-related tasks. It was created as part of a front-end developer test for Payever. The project demonstrates the use of Angular CLI, TypeScript, RxJS and Angular components to develop a basic time tracking interface.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Basic UI to manage time entries.
+- Appointments are stored in the browser's local storage for persistence.
+- Built with Angular 19.1.3 and TypeScript.
+
+## Installation
+
+To get started with the Timekeeper project, follow these steps:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/freakingeek/Timekeeper.git
+```
+
+### 2. Install Dependencies
+
+Navigate into the project directory and install the required dependencies:
+
+```bash
+cd Timekeeper
+npm install
+```
+
+### 3. Run the Development Server
+
+To run the application locally, use the Angular CLI command:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This will start a development server at `http://localhost:4200/`.
 
-## Code scaffolding
+## Build
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+To create a production build of the app, use the following command:
 
 ```bash
-ng generate --help
+ng build --prod
 ```
 
-## Building
+This will generate a `dist/` directory with the production-ready build.
 
-To build the project run:
+## Contributions
 
-```bash
-ng build
-```
+Feel free to fork the repository and contribute. Pull requests are welcome!
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## License
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License.
