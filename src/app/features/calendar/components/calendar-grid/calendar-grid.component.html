@@ -1,0 +1,15 @@
+<div class="calendar-header">
+  <div *ngFor="let day of weekDays" class="day-header">{{ day }}</div>
+</div>
+
+<div class="calendar-grid">
+  <app-calendar-day
+    *ngFor="let date of calendarDates"
+    [date]="date"
+    [appointments]="getAppointmentsForDate(date)"
+    [dropListIds]="dropListIds"
+    (appointmentDeleted)="appointmentDeleted.emit($event)"
+    (dateSelected)="dateSelected.emit($event)"
+    (appointmentDropped)="appointmentDropped.emit($event)"
+  />
+</div>
