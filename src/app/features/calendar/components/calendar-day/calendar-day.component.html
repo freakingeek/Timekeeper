@@ -1,0 +1,27 @@
+<div
+  class="calendar-day"
+  [class.today]="isToday"
+  cdkDropList
+  [id]="date.toISOString()"
+  [cdkDropListData]="appointments"
+  [cdkDropListConnectedTo]="dropListIds"
+  (cdkDropListDropped)="onDrop($event)"
+  (click)="dateSelected.emit(date)"
+>
+  <div class="date-header">
+    <span class="date-number">{{ date | date : "d" }}</span>
+    <span class="date-month" *ngIf="isFirstOfMonth">{{ date | date : "MMM" }}</span>
+  </div>
+  <div class="appointments-container">
+    <div
+      *ngFor="let appointment of appointments"
+      class="appointment"
+      cdkDrag
+      [cdkDragData]="appointment"
+      (click)="$event.stopPropagation()"
+    >
+      <span class="appointment-title">{{ appointment.title }}</span>
+      <button class="delete-btn" (click)="onDeleteAppointment(appointment, $event)">×</button>
+    </div>
+  </div>
+</div>
