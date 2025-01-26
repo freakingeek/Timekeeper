@@ -1,0 +1,11 @@
+<div class="calendar-container">
+  <app-calendar-grid
+    [calendarDates]="calendarDates"
+    [appointments]="appointments"
+    [dropListIds]="dropListIds"
+    [weekDays]="weekDays"
+    (appointmentDeleted)="deleteAppointment($event)"
+    (dateSelected)="openAppointmentDialog($event)"
+    (appointmentDropped)="onAppointmentDrop($event)"
+  />
+</div>
