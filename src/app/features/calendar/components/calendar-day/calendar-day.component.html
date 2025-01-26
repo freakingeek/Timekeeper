@@ -1,4 +1,5 @@
 <div
+  tabindex="1"
   class="calendar-day"
   [class.today]="isToday"
   cdkDropList
@@ -7,6 +8,7 @@
   [cdkDropListConnectedTo]="dropListIds"
   (cdkDropListDropped)="onDrop($event)"
   (click)="dateSelected.emit(date)"
+  (keyup.enter)="dateSelected.emit(date)"
 >
   <div class="date-header">
     <span class="date-number">{{ date | date : "d" }}</span>
@@ -14,14 +16,22 @@
   </div>
   <div class="appointments-container">
     <div
+      tabindex="2"
       *ngFor="let appointment of appointments"
       class="appointment"
       cdkDrag
       [cdkDragData]="appointment"
       (click)="$event.stopPropagation()"
+      (keyup.enter)="$event.stopPropagation()"
     >
       <span class="appointment-title">{{ appointment.title }}</span>
-      <button class="delete-btn" (click)="onDeleteAppointment(appointment, $event)">×</button>
+      <button
+        class="delete-btn"
+        (click)="onDeleteAppointment(appointment, $event)"
+        (keyup.enter)="$event.stopPropagation()"
+      >
+        ×
+      </button>
     </div>
   </div>
 </div>
